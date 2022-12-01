@@ -65,6 +65,7 @@ class HomeController extends Controller
     public function search(Request $request)
     {
         $search=$request->search;
+        $a1;
         $data=student::where('name','like','%'.$search.'%')->orwhere('email','like','%'.$search.'%')->get();
         return view('viewdata',compact('data'));
     }
